@@ -1,0 +1,34 @@
+Regular Expressions
+list($Username, $Domain) = explode("@",$Email); // explode takes the data and
+stores it into an array
+
+list pulls apart the array into individual elements
+
+An MX record tells senders how to send email for your domain.
+
+When your domain is registered, it’s assigned several DNS records, which
+enable it to be located on the Internet. These include MX records, which
+direct the domain’s mail flow. Each MX record points to an email server that’s
+configured to process mail for that domain. There’s typically one record that
+points to a primary server, then additional records that point to one or more
+backup servers. For users to send and receive email, their domain's MX records
+must point to a server that can process their mail.
+
+To filter email through the message security service, you must insert new
+records that point to the message security service's servers.
+
+Output formatting with Dates:
+strtotime function
+echo date('M j, Y A', strtotime('2013-03-21 18:10:00'));
+//prints Mar 21, 2013 PM
+
+extract: extracts the key value pairs of an array into variables. Useful to
+re-use other people's code/variables.
+
+array_walk_recursive(
+$_POST, //array you are walking
+create_function( // function
+'&$v, $k', //& passes value by reference
+'trim($v);'
+)
+); //clean up whitespace (trim) on all form input
